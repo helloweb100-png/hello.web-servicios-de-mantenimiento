@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <!-- Flags tempranas: .anim solo si el usuario no pidio reducir movimiento; .is-loading muestra el spinner -->
+    <script>
+        (function (d) {
+            var c = d.documentElement.classList;
+            c.add('js');
+            if (!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) { c.add('anim', 'is-loading'); }
+        })(document);
+    </script>
+
+    <!-- SEO -->
+    <title>SMIICE | Electricidad, Fontanería, Aire Acondicionado y Más</title>
+    <meta name="description" content="Mantenimiento e instalaciones doméstico, comercial e industrial: electricidad, fontanería, aire acondicionado, gas, impermeabilización y pintura. Cotiza por WhatsApp.">
+    <meta name="keywords" content="SMIICE, mantenimiento, instalaciones, electricidad, fontanería, aire acondicionado, gas, impermeabilización, pintura, servicio doméstico, comercial, industrial">
+    <meta name="author" content="SMIICE">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="color-scheme" content="light">
+    <!-- PRODUCCION: al publicar, agregar <link rel="canonical" href="https://TU-DOMINIO.com/"> y cambiar las URLs de og:image por rutas absolutas -->
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:site_name" content="SMIICE">
+    <meta property="og:title" content="SMIICE | Construimos con confianza">
+    <meta property="og:description" content="Electricidad, fontanería, aire acondicionado, gas, impermeabilización y pintura para hogares, comercios e industrias.">
+    <meta property="og:image" content="img/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SMIICE | Construimos con confianza">
+    <meta name="twitter:description" content="Mantenimiento e instalaciones doméstico, comercial e industrial. Cotiza por WhatsApp.">
+    <meta name="twitter:image" content="img/og-image.jpg">
+
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+    <!-- Rendimiento: conexiones tempranas y recurso critico del hero -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="img/hat.webp" type="image/webp" fetchpriority="high">
+
+    <!-- Tipografia: Sora (display, ancha como el wordmark), Geist (texto), Geist Mono (detalles tecnicos) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap">
+    <!-- Iconos: Phosphor (regular + fill) -->
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Datos estructurados: negocio. Al publicar agregar "url", "address", "areaServed" y "sameAs" (redes) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HomeAndConstructionBusiness",
+        "name": "SMIICE",
+        "slogan": "Construimos con confianza",
+        "description": "Servicios de mantenimiento e instalaciones doméstico, comercial e industrial en electricidad, fontanería, aire acondicionado, gas, impermeabilización y pintura.",
+        "telephone": "+52 1 446 492 9602",
+        "knowsAbout": ["Electricidad", "Fontanería", "Aire acondicionado", "Gas", "Impermeabilización", "Pintura"],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Servicios de mantenimiento e instalaciones",
+            "itemListElement": [
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Electricidad" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fontanería" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Aire acondicionado" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gas" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Impermeabilización" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pintura" } }
+            ]
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            { "@type": "Question", "name": "¿Qué servicios ofrece SMIICE?", "acceptedAnswer": { "@type": "Answer", "text": "Instalaciones y mantenimiento de electricidad, fontanería, aire acondicionado, gas, impermeabilización y pintura." } },
+            { "@type": "Question", "name": "¿Atienden casas, negocios e industrias?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Trabajamos en espacios domésticos, comerciales e industriales, con el mismo orden y los mismos estándares." } },
+            { "@type": "Question", "name": "¿Cómo pido una cotización?", "acceptedAnswer": { "@type": "Answer", "text": "Escríbenos por WhatsApp o llena el formulario de esta página. Cuéntanos qué necesitas y, si puedes, envía fotos o un video del problema." } },
+            { "@type": "Question", "name": "¿Puedo contratar varias especialidades en un mismo proyecto?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Esa es la ventaja de tener un solo equipo: coordinamos electricidad, fontanería, clima, gas, impermeabilización y pintura sin que tengas que buscar un proveedor para cada cosa." } },
+            { "@type": "Question", "name": "¿Qué información debo enviar para recibir una propuesta?", "acceptedAnswer": { "@type": "Answer", "text": "El tipo de servicio, el tipo de espacio (hogar, comercio o industria), la ubicación y, si es posible, fotos. Con eso preparamos una propuesta más precisa." } },
+            { "@type": "Question", "name": "¿Hacen mantenimiento preventivo?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. Además de reparaciones e instalaciones nuevas, podemos planear revisiones periódicas para evitar fallas antes de que ocurran." } }
+        ]
+    }
+    </script>
+</head>
+
+<body>
+<noscript><style>#loader{display:none!important}</style></noscript>
+
+<!-- ============================================================
+     SPINNER DE CARGA
+     El casco se rellena de oro segun avanza la carga y las cortinas se abren al terminar
+============================================================ -->
+<div id="loader" role="status" aria-live="polite" aria-label="Cargando SMIICE">
+    <div class="ld-panel ld-panel--top"></div>
+    <div class="ld-panel ld-panel--bottom"></div>
+    <div class="ld-center">
+        <div class="ld-mark">
+            <svg class="ld-svg ld-svg--spin" viewBox="0 0 120 120" aria-hidden="true">
+                <circle class="ld-dash" cx="60" cy="60" r="57"/>
+            </svg>
+            <svg class="ld-svg" viewBox="0 0 120 120" aria-hidden="true">
+                <defs>
+                    <linearGradient id="ldGold" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0" stop-color="#8a6212"/>
+                        <stop offset=".45" stop-color="#f3d06e"/>
+                        <stop offset="1" stop-color="#b27f17"/>
+                    </linearGradient>
+                </defs>
+                <circle class="ld-track" cx="60" cy="60" r="50"/>
+                <circle class="ld-arc" cx="60" cy="60" r="50"/>
+            </svg>
+            <div class="ld-hat" aria-hidden="true">
+                <img class="ld-hat-ghost" src="img/hat.webp" alt="" width="940" height="536">
+                <img class="ld-hat-fill" src="img/hat.webp" alt="" width="940" height="536">
+            </div>
+        </div>
+        <p class="ld-count" aria-hidden="true"><span id="ldNum">0</span><small>%</small></p>
+        <p class="ld-tag">Construimos con confianza</p>
+    </div>
+</div>
+
+<a class="skip" href="#main">Saltar al contenido</a>
+<div class="progress" aria-hidden="true"><i></i></div>
+
+<!-- ============================================================
+     NAVEGACION
+============================================================ -->
+<header class="nav" id="nav">
+    <div class="nav__bar">
+        <a class="nav__brand" href="#inicio" aria-label="SMIICE, ir al inicio">
+            <img class="nav__hat" src="img/hat.webp" alt="" width="940" height="536">
+            <img class="nav__word" src="img/wordmark.webp" alt="SMIICE" width="1130" height="189">
+        </a>
+        <nav class="nav__links" aria-label="Principal">
+            <a href="#servicios" data-nav="servicios">Servicios</a>
+            <a href="#sectores" data-nav="sectores">Sectores</a>
+            <a href="#proceso" data-nav="proceso">Proceso</a>
+            <a href="#compromisos" data-nav="compromisos">Compromisos</a>
+            <a href="#contacto" data-nav="contacto">Contacto</a>
+        </nav>
+        <a class="btn btn--gold btn--sm nav__cta" data-wa="Hola SMIICE, quiero cotizar un servicio de mantenimiento." href="https://wa.me/5214464929602">
+            <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i><span>Cotiza hoy</span>
+        </a>
+        <button class="nav__burger" id="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+            <span></span><span></span>
+        </button>
+    </div>
+</header>
+
+<div class="menu" id="menu" inert>
+    <nav class="menu__nav" aria-label="Menú móvil">
+        <a href="#servicios" style="--i:0">Servicios</a>
+        <a href="#sectores" style="--i:1">Sectores</a>
+        <a href="#proceso" style="--i:2">Proceso</a>
+        <a href="#compromisos" style="--i:3">Compromisos</a>
+        <a href="#preguntas" style="--i:4">Preguntas</a>
+        <a href="#contacto" style="--i:5">Contacto</a>
+    </nav>
+    <div class="menu__foot" style="--i:6">
+        <a class="btn btn--gold" data-wa="Hola SMIICE, quiero mi cotización." href="https://wa.me/5214464929602">
+            <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i><span>Quiero mi cotización</span>
+        </a>
+        <p>+52 446 492 9602</p>
+    </div>
+</div>
+
+<main id="main">
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section class="hero" id="inicio" aria-labelledby="hero-title">
+    <div class="hero__bg" aria-hidden="true">
+        <div class="hero__gridwrap"><div class="hero__grid"></div></div>
+        <div class="hero__aurora"><i></i><i></i><i></i></div>
+        <canvas id="heroCanvas"></canvas>
+    </div>
+
+    <div class="container hero__inner">
+        <div class="hero__copy">
+            <p class="pill">
+                <span class="pill__ic"><i class="ph-fill ph-hard-hat" aria-hidden="true"></i></span>
+                Construimos con confianza
+            </p>
+
+            <h1 class="hero__title" id="hero-title">
+                <span class="sr-only">Mantenimiento e instalaciones de electricidad, fontanería, aire acondicionado, gas, impermeabilización y pintura</span>
+                <span class="hero__line" aria-hidden="true"><span class="hero__line-in">Mantenimiento de</span></span>
+                <span class="hero__line hero__line--rot" aria-hidden="true">
+                    <span class="hero__line-in">
+                        <span class="rot">
+                            <span class="rot__w is-on">electricidad.</span>
+                            <span class="rot__w">fontanería.</span>
+                            <span class="rot__w">aire acondicionado.</span>
+                            <span class="rot__w">gas.</span>
+                            <span class="rot__w">impermeabilización.</span>
+                            <span class="rot__w">pintura.</span>
+                        </span>
+                    </span>
+                </span>
+            </h1>
+
+            <p class="hero__sub">Instalaciones y mantenimiento para hogares, comercios e industrias. Un equipo, seis especialidades y la tranquilidad de cumplir lo prometido.</p>
+
+            <div class="hero__cta">
+                <a class="btn btn--gold btn--lg" data-magnetic data-wa="Hola SMIICE, quiero mi cotización. Me interesa un servicio de mantenimiento o instalación." href="https://wa.me/5214464929602">
+                    <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i><span>Quiero mi cotización</span>
+                </a>
+                <a class="btn btn--ghost btn--lg" href="#servicios">
+                    <span>Conocer los servicios</span><i class="ph ph-arrow-down-right" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Visual orbital: las seis especialidades giran alrededor de una sola marca (decorativo) -->
+        <div class="hero__visual" aria-hidden="true">
+            <div class="orbit" id="orbit">
+                <div class="orbit__tilt">
+                    <div class="orbit__halo"></div>
+                    <div class="orbit__disc" data-depth="14"></div>
+
+                    <div class="ring ring--out">
+                        <div class="ring__spin">
+                            <span class="ring__line"></span>
+                            <div class="node" style="--x:50%;--y:0%"><div class="node__in"><span class="node__ic"><i class="ph ph-lightning"></i></span><span class="node__lb">Electricidad</span></div></div>
+                            <div class="node" style="--x:93.3%;--y:25%"><div class="node__in"><span class="node__ic"><i class="ph ph-drop"></i></span><span class="node__lb">Fontanería</span></div></div>
+                            <div class="node" style="--x:93.3%;--y:75%"><div class="node__in"><span class="node__ic"><i class="ph ph-fan"></i></span><span class="node__lb">Clima</span></div></div>
+                            <div class="node" style="--x:50%;--y:100%"><div class="node__in"><span class="node__ic"><i class="ph ph-flame"></i></span><span class="node__lb">Gas</span></div></div>
+                            <div class="node" style="--x:6.7%;--y:75%"><div class="node__in"><span class="node__ic"><i class="ph ph-umbrella"></i></span><span class="node__lb">Impermeabilizante</span></div></div>
+                            <div class="node" style="--x:6.7%;--y:25%"><div class="node__in"><span class="node__ic"><i class="ph ph-paint-roller"></i></span><span class="node__lb">Pintura</span></div></div>
+                        </div>
+                    </div>
+
+                    <div class="ring ring--mid">
+                        <div class="ring__spin ring__spin--rev">
+                            <span class="ring__line ring__line--dash"></span>
+                            <i class="orb" style="--x:50%;--y:0%"></i>
+                            <i class="orb orb--sm" style="--x:100%;--y:50%"></i>
+                            <i class="orb" style="--x:15%;--y:85%"></i>
+                        </div>
+                    </div>
+
+                    <div class="ring ring--in">
+                        <div class="ring__spin ring__spin--slow"><span class="ring__arc"></span></div>
+                    </div>
+
+                    <div class="orbit__core" data-depth="34">
+                        <img src="img/hat.webp" alt="" width="940" height="536" fetchpriority="high">
+                    </div>
+                </div>
+            </div>
+
+            <div class="orbit__chips">
+                <div class="chip"><span class="chip__in"><i class="ph ph-house-line"></i>Doméstico</span></div>
+                <div class="chip"><span class="chip__in"><i class="ph ph-buildings"></i>Comercial</span></div>
+                <div class="chip"><span class="chip__in"><i class="ph ph-factory"></i>Industrial</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     CINTA DE ESPECIALIDADES (unico marquee de la pagina)
+============================================================ -->
+<section class="marquee" aria-label="Especialidades de SMIICE">
+    <div class="marquee__track" id="marqueeTrack">
+        <ul class="marquee__list">
+            <li>Electricidad</li><li class="sep"><img src="img/hat.webp" alt="" width="940" height="536"></li>
+            <li>Fontanería</li><li class="sep"><img src="img/hat.webp" alt="" width="940" height="536"></li>
+            <li>Aire acondicionado</li><li class="sep"><img src="img/hat.webp" alt="" width="940" height="536"></li>
+            <li>Gas</li><li class="sep"><img src="img/hat.webp" alt="" width="940" height="536"></li>
+            <li>Impermeabilización</li><li class="sep"><img src="img/hat.webp" alt="" width="940" height="536"></li>
+            <li>Pintura</li><li class="sep"><img src="img/hat.webp" alt="" width="940" height="536"></li>
+        </ul>
+        <ul class="marquee__list" aria-hidden="true">
+            <li>Electricidad</li><li class="sep"><img src="img/hat.webp" alt="" width="940" height="536"></li>
+            <li>Fontanería</li><li class="sep"><img src="img/hat.webp" alt="" width="940" height="536"></li>
+            <li>Aire acondicionado</li><li class="sep"><img src="img/hat.webp" alt="" width="940" height="536"></li>
+            <li>Gas</li><li class="sep"><img src="img/hat.webp" alt="" width="940" height="536"></li>
+            <li>Impermeabilización</li><li class="sep"><img src="img/hat.webp" alt="" width="940" height="536"></li>
+            <li>Pintura</li><li class="sep"><img src="img/hat.webp" alt="" width="940" height="536"></li>
+        </ul>
+    </div>
+</section>
+
+<!-- ============================================================
+     MANIFIESTO + CIFRAS
+============================================================ -->
+<section class="manifesto" id="nosotros" aria-labelledby="manifesto-title">
+    <div class="container">
+        <h2 class="manifesto__text" id="manifesto-title" data-scrub>Cuando algo falla en tu casa, tu negocio o tu planta, no necesitas promesas: necesitas a alguien que llegue, diagnostique con claridad y lo deje funcionando. Eso es <span class="gold-text">SMIICE.</span></h2>
+
+        <dl class="stats">
+            <div class="stat" data-reveal>
+                <dt class="stat__l">Especialidades técnicas</dt>
+                <dd class="stat__n"><b data-count="6">6</b></dd>
+                <dd class="stat__d">Electricidad, fontanería, clima, gas, impermeabilización y pintura.</dd>
+            </div>
+            <div class="stat" data-reveal>
+                <dt class="stat__l">Tipos de espacio</dt>
+                <dd class="stat__n"><b data-count="3">3</b></dd>
+                <dd class="stat__d">Doméstico, comercial e industrial, con el mismo estándar.</dd>
+            </div>
+            <div class="stat" data-reveal>
+                <dt class="stat__l">Equipo para coordinar todo</dt>
+                <dd class="stat__n"><b data-count="1">1</b></dd>
+                <dd class="stat__d">Un solo contacto, sin perseguir a un proveedor por oficio.</dd>
+            </div>
+        </dl>
+    </div>
+</section>
+
+<!-- ============================================================
+     IMAGEN QUE SE ABRE A PANTALLA COMPLETA AL HACER SCROLL
+============================================================ -->
+<section class="expand" id="trabajo" aria-labelledby="expand-title">
+    <div class="expand__pin">
+        <div class="expand__lead">
+            <h2 id="expand-title">Trabajo serio, <span class="gold-text expand__gold">a cualquier escala.</span></h2>
+        </div>
+        <div class="expand__media">
+            <img class="expand__img" src="img/trabajo-profesional.webp" width="2000" height="1333" alt="Ingeniero con casco naranja y chaleco reflejante revisando una máquina industrial de gran tamaño">
+            <div class="expand__scrim"></div>
+        </div>
+        <div class="expand__content container">
+            <p class="expand__text">Desde una reparación en casa hasta una nave industrial, llevamos el mismo orden, la misma limpieza y el mismo compromiso.</p>
+            <a class="btn btn--gold btn--lg" data-magnetic data-wa="Hola SMIICE, quiero contarles lo que necesito para recibir una propuesta." href="https://wa.me/5214464929602">
+                <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i><span>Cuéntanos qué necesitas</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SERVICIOS (scroll horizontal fijado en escritorio, tarjetas apiladas en movil)
+============================================================ -->
+<section class="services" id="servicios" aria-labelledby="services-title">
+    <div class="services__pin">
+        <div class="services__head container">
+            <p class="eyebrow">Servicios</p>
+            <h2 id="services-title" data-split>Seis especialidades, un solo equipo.</h2>
+            <p class="lead">Instalamos, reparamos y damos mantenimiento. Tú eliges qué necesitas; nosotros coordinamos el resto.</p>
+        </div>
+
+        <div class="services__viewport">
+            <ul class="services__track" role="list">
+
+                <li class="svc">
+                    <article class="svc-card">
+                        <div class="svc-card__media"><img src="img/electricidad.webp" width="1400" height="1050" alt="Electricista con taladro trabajando en un tablero de control eléctrico"></div>
+                        <span class="svc-card__ic"><i class="ph ph-lightning" aria-hidden="true"></i></span>
+                        <div class="svc-card__body">
+                            <h3>Electricidad</h3>
+                            <p>Instalaciones y mantenimiento para que tu energía sea estable y segura.</p>
+                            <ul class="tags" role="list"><li>Tableros y centros de carga</li><li>Cableado y contactos</li><li>Iluminación</li><li>Diagnóstico de fallas</li></ul>
+                            <a class="link-arrow" data-wa="Hola SMIICE, quiero cotizar un servicio de electricidad." href="https://wa.me/5214464929602"><span>Cotizar este servicio</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+                        </div>
+                    </article>
+                </li>
+
+                <li class="svc">
+                    <article class="svc-card">
+                        <div class="svc-card__media"><img src="img/fontaneria.webp" width="1400" height="933" alt="Plomero con guantes conectando tuberías metálicas en una instalación hidráulica"></div>
+                        <span class="svc-card__ic"><i class="ph ph-drop" aria-hidden="true"></i></span>
+                        <div class="svc-card__body">
+                            <h3>Fontanería</h3>
+                            <p>Fugas, tuberías, sanitarios y redes hidráulicas resueltos con acabado limpio.</p>
+                            <ul class="tags" role="list"><li>Reparación de fugas</li><li>Instalación de tuberías</li><li>Sanitarios y llaves</li><li>Tinacos y cisternas</li></ul>
+                            <a class="link-arrow" data-wa="Hola SMIICE, quiero cotizar un servicio de fontanería." href="https://wa.me/5214464929602"><span>Cotizar este servicio</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+                        </div>
+                    </article>
+                </li>
+
+                <li class="svc">
+                    <article class="svc-card">
+                        <div class="svc-card__media"><img src="img/aire-acondicionado.webp" width="1300" height="1950" alt="Técnico de aire acondicionado ajustando conexiones de una unidad exterior"></div>
+                        <span class="svc-card__ic"><i class="ph ph-fan" aria-hidden="true"></i></span>
+                        <div class="svc-card__body">
+                            <h3>Aire acondicionado</h3>
+                            <p>Instalación, limpieza y mantenimiento para que el clima responda cuando más lo necesitas.</p>
+                            <ul class="tags" role="list"><li>Instalación de minisplit</li><li>Mantenimiento preventivo</li><li>Diagnóstico y reparación</li></ul>
+                            <a class="link-arrow" data-wa="Hola SMIICE, quiero cotizar un servicio de aire acondicionado." href="https://wa.me/5214464929602"><span>Cotizar este servicio</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+                        </div>
+                    </article>
+                </li>
+
+                <li class="svc">
+                    <article class="svc-card">
+                        <div class="svc-card__media"><img src="img/gas.webp" width="1400" height="1050" alt="Técnico con guantes revisando un calentador de gas de pared"></div>
+                        <span class="svc-card__ic"><i class="ph ph-flame" aria-hidden="true"></i></span>
+                        <div class="svc-card__body">
+                            <h3>Gas</h3>
+                            <p>Instalaciones y revisiones con atención en cada conexión y cada detalle de seguridad.</p>
+                            <ul class="tags" role="list"><li>Instalaciones de gas</li><li>Revisión de líneas</li><li>Calentadores y boilers</li><li>Estufas y parrillas</li></ul>
+                            <a class="link-arrow" data-wa="Hola SMIICE, quiero cotizar un servicio de gas." href="https://wa.me/5214464929602"><span>Cotizar este servicio</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+                        </div>
+                    </article>
+                </li>
+
+                <li class="svc">
+                    <article class="svc-card">
+                        <div class="svc-card__media"><img src="img/impermeabilizacion.webp" width="1300" height="2311" alt="Trabajador desenrollando una membrana impermeabilizante sobre una azotea"></div>
+                        <span class="svc-card__ic"><i class="ph ph-umbrella" aria-hidden="true"></i></span>
+                        <div class="svc-card__body">
+                            <h3>Impermeabilización</h3>
+                            <p>Protege azoteas y techos de filtraciones y humedad antes de que dañen tu patrimonio.</p>
+                            <ul class="tags" role="list"><li>Azoteas y techos</li><li>Sellado de grietas</li><li>Tratamiento de humedad</li></ul>
+                            <a class="link-arrow" data-wa="Hola SMIICE, quiero cotizar un servicio de impermeabilización." href="https://wa.me/5214464929602"><span>Cotizar este servicio</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+                        </div>
+                    </article>
+                </li>
+
+                <li class="svc">
+                    <article class="svc-card">
+                        <div class="svc-card__media"><img src="img/pintura.webp" width="1300" height="1950" alt="Pintor con casco y overol blanco pintando el techo de una habitación"></div>
+                        <span class="svc-card__ic"><i class="ph ph-paint-roller" aria-hidden="true"></i></span>
+                        <div class="svc-card__body">
+                            <h3>Pintura</h3>
+                            <p>Renueva interiores y exteriores con acabados uniformes y protección duradera.</p>
+                            <ul class="tags" role="list"><li>Interiores y exteriores</li><li>Preparación de superficies</li><li>Fachadas y naves</li></ul>
+                            <a class="link-arrow" data-wa="Hola SMIICE, quiero cotizar un servicio de pintura." href="https://wa.me/5214464929602"><span>Cotizar este servicio</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+                        </div>
+                    </article>
+                </li>
+
+                <li class="svc svc--end">
+                    <article class="svc-end">
+                        <img class="svc-end__hat" src="img/hat.webp" alt="" width="940" height="536">
+                        <h3>¿Tu proyecto mezcla varias especialidades?</h3>
+                        <p>Mejor aún: es justo lo que hacemos. Cuéntanos tu caso y lo coordinamos en un solo plan.</p>
+                        <a class="btn btn--dark btn--lg" data-magnetic data-wa="Hola SMIICE, mi proyecto combina varias especialidades y quiero platicarlo con ustedes." href="https://wa.me/5214464929602">
+                            <span>Quiero coordinar mi proyecto completo</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+                        </a>
+                    </article>
+                </li>
+            </ul>
+        </div>
+
+        <div class="services__progress" aria-hidden="true"><i></i></div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTORES (acordeon de fotos)
+============================================================ -->
+<section class="sectors" id="sectores" aria-labelledby="sectors-title">
+    <div class="container">
+        <h2 id="sectors-title" data-split>Un servicio a la medida de cada espacio.</h2>
+        <p class="lead" data-reveal>Lo que se necesita en una casa no es lo mismo que en una plaza comercial o en una nave. Nosotros lo sabemos y trabajamos en consecuencia.</p>
+
+        <div class="acc" id="acc" data-reveal>
+            <article class="acc__item is-active">
+                <img class="acc__img" src="img/sector-domestico.webp" width="1400" height="933" alt="Sala moderna y luminosa con ventanales, sofá y plantas">
+                <div class="acc__shade"></div>
+                <button class="acc__trigger" type="button" aria-expanded="true" aria-controls="acc-p1" id="acc-t1">
+                    <span class="acc__ic"><i class="ph ph-house-line" aria-hidden="true"></i></span>
+                    <span class="acc__title">Doméstico</span>
+                </button>
+                <div class="acc__panel" id="acc-p1" role="region" aria-labelledby="acc-t1">
+                    <h3>Tu casa, siempre lista.</h3>
+                    <p>Mantenimiento y mejoras para casas y departamentos: desde una llave que gotea hasta una instalación completa.</p>
+                    <ul role="list"><li>Revisiones preventivas</li><li>Reparaciones y reemplazos</li><li>Instalaciones nuevas</li><li>Pintura y acabados</li></ul>
+                    <a class="btn btn--gold" data-wa="Hola SMIICE, quiero cotizar un servicio para mi casa." href="https://wa.me/5214464929602"><span>Cotizar para mi casa</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+                </div>
+            </article>
+
+            <article class="acc__item">
+                <img class="acc__img" src="img/sector-comercial.webp" width="1400" height="1050" alt="Interior de un centro comercial moderno con escaleras eléctricas y techo dorado">
+                <div class="acc__shade"></div>
+                <button class="acc__trigger" type="button" aria-expanded="false" aria-controls="acc-p2" id="acc-t2">
+                    <span class="acc__ic"><i class="ph ph-buildings" aria-hidden="true"></i></span>
+                    <span class="acc__title">Comercial</span>
+                </button>
+                <div class="acc__panel" id="acc-p2" role="region" aria-labelledby="acc-t2">
+                    <h3>Tu negocio, sin interrupciones.</h3>
+                    <p>Locales, oficinas y plazas necesitan un servicio que respete su operación: planeado, ordenado y a tiempo.</p>
+                    <ul role="list"><li>Mantenimiento programado</li><li>Adecuaciones de locales</li><li>Clima y electricidad</li><li>Imagen y pintura</li></ul>
+                    <a class="btn btn--gold" data-wa="Hola SMIICE, quiero cotizar un servicio para mi negocio." href="https://wa.me/5214464929602"><span>Cotizar para mi negocio</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+                </div>
+            </article>
+
+            <article class="acc__item">
+                <img class="acc__img" src="img/sector-industrial.webp" width="1400" height="934" alt="Trabajador con casco y chaleco reflejante dentro de una planta industrial">
+                <div class="acc__shade"></div>
+                <button class="acc__trigger" type="button" aria-expanded="false" aria-controls="acc-p3" id="acc-t3">
+                    <span class="acc__ic"><i class="ph ph-factory" aria-hidden="true"></i></span>
+                    <span class="acc__title">Industrial</span>
+                </button>
+                <div class="acc__panel" id="acc-p3" role="region" aria-labelledby="acc-t3">
+                    <h3>Tu planta, operando con seguridad.</h3>
+                    <p>Naves, bodegas y plantas piden instalaciones robustas y procesos ordenados. Lo coordinamos de principio a fin.</p>
+                    <ul role="list"><li>Mantenimiento preventivo</li><li>Líneas de gas y fluidos</li><li>Impermeabilización de naves</li><li>Instalaciones eléctricas</li></ul>
+                    <a class="btn btn--gold" data-wa="Hola SMIICE, quiero cotizar un servicio para mi planta o nave industrial." href="https://wa.me/5214464929602"><span>Cotizar para mi planta</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     PROCESO (linea que se dibuja con el scroll)
+============================================================ -->
+<section class="process" id="proceso" aria-labelledby="process-title">
+    <div class="container process__grid">
+        <div class="process__intro">
+            <h2 id="process-title" data-split>Así trabajamos, sin sorpresas.</h2>
+            <p class="lead" data-reveal>Cuatro pasos claros, de tu primer mensaje a la última revisión.</p>
+            <div class="process__cta" data-reveal>
+                <a class="btn btn--dark btn--lg" data-magnetic data-wa="Hola SMIICE, estoy listo para empezar. Quiero describirles mi caso." href="https://wa.me/5214464929602">
+                    <span>Estoy listo para empezar</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="steps">
+        <span class="steps__rail" aria-hidden="true"></span>
+        <span class="steps__fill" aria-hidden="true"></span>
+        <ol class="steps__list" role="list">
+            <li class="step">
+                <span class="step__node"><i class="ph ph-chat-circle-dots" aria-hidden="true"></i></span>
+                <div class="step__card spot">
+                    <h3>Escríbenos tu necesidad</h3>
+                    <p>Mándanos un mensaje por WhatsApp con tu necesidad y, si puedes, una foto o un video del problema.</p>
+                </div>
+            </li>
+            <li class="step">
+                <span class="step__node"><i class="ph ph-magnifying-glass" aria-hidden="true"></i></span>
+                <div class="step__card spot">
+                    <h3>Revisamos y diagnosticamos</h3>
+                    <p>Evaluamos el caso para entender la causa, el alcance del trabajo y los materiales necesarios.</p>
+                </div>
+            </li>
+            <li class="step">
+                <span class="step__node"><i class="ph ph-clipboard-text" aria-hidden="true"></i></span>
+                <div class="step__card spot">
+                    <h3>Recibes una cotización clara</h3>
+                    <p>Sabes qué se va a hacer, con qué materiales y cuánto cuesta, antes de que empecemos.</p>
+                </div>
+            </li>
+            <li class="step">
+                <span class="step__node"><i class="ph ph-seal-check" aria-hidden="true"></i></span>
+                <div class="step__card spot">
+                    <h3>Ejecutamos y entregamos</h3>
+                    <p>Trabajamos con orden y limpieza, y revisamos contigo que todo quede funcionando.</p>
+                </div>
+            </li>
+        </ol>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     COMPROMISOS (bento de 5 celdas)
+============================================================ -->
+<section class="commit" id="compromisos" aria-labelledby="commit-title">
+    <div class="container">
+        <p class="eyebrow" data-reveal>Por qué SMIICE</p>
+        <h2 id="commit-title" data-split>Lo que prometemos, lo cumplimos.</h2>
+
+        <div class="bento">
+            <article class="b b--main spot" data-reveal>
+                <img class="b__hat" src="img/hat.webp" alt="" width="940" height="536">
+                <h3>Construimos con confianza, de principio a fin.</h3>
+                <p>Un solo equipo que diagnostica, cotiza, ejecuta y revisa contigo. Sin intermediarios y sin letra chiquita.</p>
+                <a class="btn btn--dark btn--lg" data-magnetic data-wa="Hola SMIICE, quiero agendar una revisión de mi caso." href="https://wa.me/5214464929602">
+                    <span>Clic aquí y agenda tu revisión</span><i class="ph ph-arrow-up-right" aria-hidden="true"></i>
+                </a>
+            </article>
+
+            <article class="b spot" data-reveal>
+                <span class="b__ic"><i class="ph ph-clipboard-text" aria-hidden="true"></i></span>
+                <h3>Precio claro antes de empezar</h3>
+                <p>Conoces el alcance y el costo del trabajo desde la cotización.</p>
+            </article>
+
+            <article class="b spot" data-reveal>
+                <span class="b__ic"><i class="ph ph-broom" aria-hidden="true"></i></span>
+                <h3>Trabajo limpio y ordenado</h3>
+                <p>Cuidamos tu espacio y lo dejamos listo al terminar.</p>
+            </article>
+
+            <article class="b b--ink spot" data-reveal>
+                <span class="b__ic"><i class="ph ph-shield-check" aria-hidden="true"></i></span>
+                <h3>Seguridad primero</h3>
+                <p>Criterio de seguridad en cada instalación eléctrica, de gas y de altura.</p>
+            </article>
+
+            <article class="b spot" data-reveal>
+                <span class="b__ic"><i class="ph ph-chat-circle-dots" aria-hidden="true"></i></span>
+                <h3>Trato directo por WhatsApp</h3>
+                <p>Hablas con quien te atiende, sin vueltas ni intermediarios.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     PREGUNTAS FRECUENTES (coinciden con el JSON-LD FAQPage del head)
+============================================================ -->
+<section class="faq" id="preguntas" aria-labelledby="faq-title">
+    <div class="container container--narrow">
+        <h2 id="faq-title" data-split>Preguntas frecuentes</h2>
+
+        <div class="faq__list" data-reveal>
+            <div class="faq__item">
+                <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a1" id="faq-q1"><span>¿Qué servicios ofrece SMIICE?</span><i class="ph ph-plus" aria-hidden="true"></i></button></h3>
+                <div class="faq__a" id="faq-a1" role="region" aria-labelledby="faq-q1"><div><p>Instalaciones y mantenimiento de electricidad, fontanería, aire acondicionado, gas, impermeabilización y pintura.</p></div></div>
+            </div>
+            <div class="faq__item">
+                <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a2" id="faq-q2"><span>¿Atienden casas, negocios e industrias?</span><i class="ph ph-plus" aria-hidden="true"></i></button></h3>
+                <div class="faq__a" id="faq-a2" role="region" aria-labelledby="faq-q2"><div><p>Sí. Trabajamos en espacios domésticos, comerciales e industriales, con el mismo orden y los mismos estándares.</p></div></div>
+            </div>
+            <div class="faq__item">
+                <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a3" id="faq-q3"><span>¿Cómo pido una cotización?</span><i class="ph ph-plus" aria-hidden="true"></i></button></h3>
+                <div class="faq__a" id="faq-a3" role="region" aria-labelledby="faq-q3"><div><p>Escríbenos por WhatsApp o llena el formulario de esta página. Cuéntanos qué necesitas y, si puedes, envía fotos o un video del problema.</p></div></div>
+            </div>
+            <div class="faq__item">
+                <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a4" id="faq-q4"><span>¿Puedo contratar varias especialidades en un mismo proyecto?</span><i class="ph ph-plus" aria-hidden="true"></i></button></h3>
+                <div class="faq__a" id="faq-a4" role="region" aria-labelledby="faq-q4"><div><p>Sí. Esa es la ventaja de tener un solo equipo: coordinamos electricidad, fontanería, clima, gas, impermeabilización y pintura sin que tengas que buscar un proveedor para cada cosa.</p></div></div>
+            </div>
+            <div class="faq__item">
+                <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a5" id="faq-q5"><span>¿Qué información debo enviar para recibir una propuesta?</span><i class="ph ph-plus" aria-hidden="true"></i></button></h3>
+                <div class="faq__a" id="faq-a5" role="region" aria-labelledby="faq-q5"><div><p>El tipo de servicio, el tipo de espacio (hogar, comercio o industria), la ubicación y, si es posible, fotos. Con eso preparamos una propuesta más precisa.</p></div></div>
+            </div>
+            <div class="faq__item">
+                <h3><button class="faq__q" type="button" aria-expanded="false" aria-controls="faq-a6" id="faq-q6"><span>¿Hacen mantenimiento preventivo?</span><i class="ph ph-plus" aria-hidden="true"></i></button></h3>
+                <div class="faq__a" id="faq-a6" role="region" aria-labelledby="faq-q6"><div><p>Sí. Además de reparaciones e instalaciones nuevas, podemos planear revisiones periódicas para evitar fallas antes de que ocurran.</p></div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     CIERRE: LLAMADA A LA ACCION GRANDE
+============================================================ -->
+<section class="cta" aria-labelledby="cta-title">
+    <div class="container">
+        <div class="cta__card">
+            <img class="cta__hat" src="img/hat.webp" alt="" width="940" height="536">
+            <div class="cta__grid-bg" aria-hidden="true"></div>
+            <div class="cta__body">
+                <h2 id="cta-title" data-split>¿Listo para que todo vuelva a funcionar?</h2>
+                <p>Escríbenos hoy. Te respondemos por WhatsApp y empezamos por entender tu caso.</p>
+                <div class="cta__btns">
+                    <a class="btn btn--gold btn--lg" data-magnetic data-wa="Hola SMIICE, necesito resolver un problema y quiero una cotización hoy." href="https://wa.me/5214464929602">
+                        <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i><span>Resuelve mi problema hoy</span>
+                    </a>
+                    <a class="btn btn--line btn--lg" href="#contacto"><span>Prefiero llenar el formulario</span><i class="ph ph-arrow-down" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     CONTACTO (el formulario arma un mensaje y abre WhatsApp)
+============================================================ -->
+<section class="contact" id="contacto" aria-labelledby="contact-title">
+    <div class="container contact__grid">
+        <div class="contact__info">
+            <p class="eyebrow" data-reveal>Contacto</p>
+            <h2 id="contact-title" data-split>Hablemos de tu proyecto.</h2>
+            <p class="lead" data-reveal>Llena el formulario y abrimos WhatsApp con tu solicitud lista. Mientras más detalles, más precisa será la propuesta.</p>
+
+            <ul class="contact__list" role="list" data-reveal>
+                <li>
+                    <span class="contact__ic"><i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i></span>
+                    <div><small>WhatsApp</small><a href="https://wa.me/5214464929602" data-wa="Hola SMIICE, tengo una consulta.">+52 446 492 9602</a></div>
+                </li>
+                <li>
+                    <span class="contact__ic"><i class="ph ph-camera" aria-hidden="true"></i></span>
+                    <div><small>Ayúdanos a cotizar mejor</small><span>Envía fotos o un video del problema</span></div>
+                </li>
+                <li>
+                    <span class="contact__ic"><i class="ph ph-handshake" aria-hidden="true"></i></span>
+                    <div><small>Atención</small><span>Directa, sin intermediarios</span></div>
+                </li>
+            </ul>
+        </div>
+
+        <form class="form" id="quoteForm" novalidate data-reveal>
+            <div class="form__row">
+                <div class="field">
+                    <label for="f-name">Nombre</label>
+                    <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Tu nombre completo" required aria-describedby="e-name">
+                    <p class="field__err" id="e-name" aria-live="polite"></p>
+                </div>
+                <div class="field">
+                    <label for="f-phone">Teléfono <span class="opt">(opcional)</span></label>
+                    <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="10 dígitos" aria-describedby="e-phone">
+                    <p class="field__err" id="e-phone" aria-live="polite"></p>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="f-service">¿Qué servicio necesitas?</label>
+                <div class="select">
+                    <select id="f-service" name="service" required aria-describedby="e-service">
+                        <option value="" selected disabled>Selecciona una opción</option>
+                        <option>Electricidad</option>
+                        <option>Fontanería</option>
+                        <option>Aire acondicionado</option>
+                        <option>Gas</option>
+                        <option>Impermeabilización</option>
+                        <option>Pintura</option>
+                        <option>Varios servicios</option>
+                        <option>No estoy seguro</option>
+                    </select>
+                    <i class="ph ph-caret-down" aria-hidden="true"></i>
+                </div>
+                <p class="field__err" id="e-service" aria-live="polite"></p>
+            </div>
+
+            <fieldset class="field field--set" aria-describedby="e-space">
+                <legend>¿Para qué tipo de espacio?</legend>
+                <div class="chips">
+                    <label class="chipopt"><input type="radio" name="space" value="Hogar"><span><i class="ph ph-house-line" aria-hidden="true"></i>Hogar</span></label>
+                    <label class="chipopt"><input type="radio" name="space" value="Comercio"><span><i class="ph ph-buildings" aria-hidden="true"></i>Comercio</span></label>
+                    <label class="chipopt"><input type="radio" name="space" value="Industria"><span><i class="ph ph-factory" aria-hidden="true"></i>Industria</span></label>
+                </div>
+                <p class="field__err" id="e-space" aria-live="polite"></p>
+            </fieldset>
+
+            <div class="field">
+                <label for="f-msg">Cuéntanos más <span class="opt">(opcional)</span></label>
+                <textarea id="f-msg" name="message" rows="4" placeholder="Ej. Tengo una fuga en el baño y quiero revisar también la instalación eléctrica"></textarea>
+            </div>
+
+            <button class="btn btn--gold btn--lg form__submit" type="submit">
+                <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i><span class="form__label">Enviar mi solicitud</span>
+            </button>
+            <p class="form__note">Se abrirá WhatsApp con tu mensaje listo para enviar.</p>
+
+            <div class="form__ok" id="formOk" hidden>
+                <span class="form__ok-ic"><i class="ph-fill ph-check-circle" aria-hidden="true"></i></span>
+                <div>
+                    <strong>Listo, abrimos WhatsApp con tu solicitud.</strong>
+                    <p>Si no se abrió, <a id="formFallback" href="https://wa.me/5214464929602" target="_blank" rel="noopener noreferrer">toca aquí para continuar</a>.</p>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+</main>
+
+<!-- ============================================================
+     PIE
+============================================================ -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer__top">
+            <div class="footer__brand">
+                <img class="footer__logo" src="img/logo.webp" alt="SMIICE, construimos con confianza" width="1145" height="820" loading="lazy">
+                <p>Mantenimiento e instalaciones doméstico, comercial e industrial.</p>
+                <a class="btn btn--dark" data-wa="Hola SMIICE, quiero información." href="https://wa.me/5214464929602">
+                    <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i><span>Escríbenos por WhatsApp</span>
+                </a>
+            </div>
+
+            <nav class="footer__col" aria-label="Servicios">
+                <p class="footer__h">Servicios</p>
+                <ul role="list">
+                    <li><a data-wa="Hola SMIICE, quiero cotizar un servicio de electricidad." href="https://wa.me/5214464929602">Electricidad</a></li>
+                    <li><a data-wa="Hola SMIICE, quiero cotizar un servicio de fontanería." href="https://wa.me/5214464929602">Fontanería</a></li>
+                    <li><a data-wa="Hola SMIICE, quiero cotizar un servicio de aire acondicionado." href="https://wa.me/5214464929602">Aire acondicionado</a></li>
+                    <li><a data-wa="Hola SMIICE, quiero cotizar un servicio de gas." href="https://wa.me/5214464929602">Gas</a></li>
+                    <li><a data-wa="Hola SMIICE, quiero cotizar un servicio de impermeabilización." href="https://wa.me/5214464929602">Impermeabilización</a></li>
+                    <li><a data-wa="Hola SMIICE, quiero cotizar un servicio de pintura." href="https://wa.me/5214464929602">Pintura</a></li>
+                </ul>
+            </nav>
+
+            <nav class="footer__col" aria-label="Navegación del sitio">
+                <p class="footer__h">Explora</p>
+                <ul role="list">
+                    <li><a href="#sectores">Sectores</a></li>
+                    <li><a href="#proceso">Proceso</a></li>
+                    <li><a href="#compromisos">Compromisos</a></li>
+                    <li><a href="#preguntas">Preguntas</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="footer__word" aria-hidden="true"><img src="img/wordmark.webp" alt="" width="1130" height="189" loading="lazy"></div>
+
+        <div class="footer__bottom">
+            <p>© <span id="year">2026</span> SMIICE. Todos los derechos reservados.</p>
+            <p>Construimos con confianza.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- BOTON FLOTANTE DE WHATSAPP -->
+<a class="wa-float" id="waFloat" data-wa="Hola SMIICE, vi su página y tengo una consulta." href="https://wa.me/5214464929602" aria-label="Escríbenos por WhatsApp">
+    <span class="wa-float__tip">¿Hablamos?</span>
+    <i class="ph-fill ph-whatsapp-logo" aria-hidden="true"></i>
+</a>
+
+<!-- Librerias de movimiento: GSAP + ScrollTrigger (animaciones de scroll) y Lenis (desplazamiento suave) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js" defer></script>
+<script src="app.js" defer></script>
+</body>
+</html>
